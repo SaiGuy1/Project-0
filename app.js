@@ -44,6 +44,9 @@ const coin = {
   height: 45
 }
 
+var progressOne = 0;
+var progressTwo = 0;
+
 
 function collision () {
   // object_1.left < object_2.left + object_2.width  && object_1.left + object_1.width  > object_2.left &&
@@ -69,12 +72,19 @@ playerTwo.yPosition = $("#playerTwo").position().top
 
       $("#playerOne").toggleClass("animated tada duration-4s")
       playerOne.coins += 1
+      progressOne += 10
 
       displayCoin();
 
       $("#oneScore").text(`Player 1 Score: ${playerOne.coins}`)
 
+
       console.log("Player 1 Score: " + playerOne.coins)
+
+      
+
+      $("#OneProgress").attr('style', `width: ${progressOne}%`)
+
 
     }
   
@@ -84,12 +94,16 @@ playerTwo.yPosition = $("#playerTwo").position().top
    playerTwo.yPosition + playerTwo.height > coin.yPosition) {
       console.log("PLAYER TWO GOT THE COIN")
       $("#playerTwo").toggleClass("animated tada duration-4s")
+      playerTwo.coins += 1
+      progressTwo += 10
 
       displayCoin();
 
-      $("#oneScore").text(`Player 1 Score: ${playerOne.coins}`)
+      $("#twoScore").text(`Player 2 Score: ${playerTwo.coins}`)
 
-      console.log("Player 1 Score: " + playerOne.coins)
+      console.log("Player 1 Score: " + playerTwo.coins)
+
+      $("#TwoProgress").attr('style', `width: ${progressTwo}%`)
 
 
   }
@@ -108,7 +122,7 @@ setInterval(collision, 100);
 console.log("Player 1 X: " + playerOne.position);
 
 
-$(".jumbotron").css({ height: $(window).height() /1.5 + "px" });
+$(".jumbotron").css({ height: $(window).height() - $(".navbar").height() /1.5 + "px" });
 
 $(window).on("resize", function() {
   $(".jumbotron").css({ height: $(window).height() /1.5 + "px" });
@@ -183,8 +197,15 @@ function createCoin () {
 	// NumOfCoins(15);
 	setInterval(displayCoin, 2000);
 
+  function checkWinner () {
+    if (progressOne === 10 || progressTwo === 10) {
+      console.log("player has won!")
+      $("#message").attr("aria-hidden", "false");
+  }
+}
 
 
+  setInterval(checkWinner, 500);
 
 
 
@@ -201,13 +222,13 @@ document.addEventListener("keydown", function (event) {
      $("#playerOne").animate({
         top: "-=160px"
       });
-      $("#playerOne").animate({
-        top: "+=160px"
-      });
+      // $("#playerOne").animate({
+      //   top: "+=160px"
+      // });
     }
     else if (event.keyCode === 40) { // up
       $("#playerOne").animate({
-        top: "+=100px"
+        top: "+=160px"
       });
     }
     else if (event.keyCode === 39) { // right
@@ -224,14 +245,14 @@ document.addEventListener("keydown", function (event) {
       $("#playerTwo").animate({
         top: "-=160px"
       });
-      $("#playerTwo").animate({
-        top: "+=160px"
-      });
+      // $("#playerTwo").animate({
+      //   top: "+=160px"
+      // });
     }
 
     else if (event.keyCode === 83) { // up
       $("#playerTwo").animate({
-        top: "+=100px"
+        top: "+=160px"
       });
     }
     // else if (element.keyCode == 83) { // up
@@ -271,6 +292,9 @@ document.addEventListener("keyup", function (event) {
   	else if (event.keyCode === 68) {
   		$("#playerTwo").animate().stop(true,false);
   	}
+    else if (event.keyCode === 87) { // right
+      $("#playerOne").animate().stop(true, false);
+    }
 
 });
 // });
