@@ -1,4 +1,3 @@
-
 *{
 	box-sizing: border-box;
 	margin: 0;
@@ -8,35 +7,59 @@
 body {
 	height: 100vh;
 	width: 100vw;
-	display: flex;
 }
 
-#game {
-	width: 100vh;
-	height: 100vw;
-	display: flex;
-  	border: 3px solid green;
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
-#gameBoard {
-	display: flex;
-	justify-content: center;
+.jumbotron {
+	height: 95vh;
+	width: 95vw;
+	margin: 0 auto;
+	box-shadow: 0.375em 0.375em 0 0 rgba(15, 28, 63, 0.125);
+	overflow: hidden;
+}
+
+.row {
+	margin: 0 auto;
+	padding: 10px;
+
+}
+
+.card {
+	box-shadow: 0.375em 0.375em 0 0 rgba(15, 28, 63, 0.125);
+  font-family: 'Sniglet', cursive;
+}
+
+#playerUno {
+	background-color: deepskyblue;
+	color: white;
 }
 
 #playerOne {
-  height: 100px;
+  height: 150px;
   width: 50px;
   background-color: deepskyblue;
   position: absolute;
-  bottom: 10px;
+  bottom: 300px;
+  right: 100px;
+  box-shadow: 0.375em 0.375em 0 0 rgba(15, 28, 63, 0.125);
 }
 
 #playerTwo {
-  height: 100px;
+  height: 150px;
   width: 50px;
   background-color: deeppink;
   position: absolute;
-  bottom: 10px;
+  bottom: 300px;
+  left: 100px;
+  box-shadow: 0.375em 0.375em 0 0 rgba(15, 28, 63, 0.125);
 }
 
 
@@ -47,5 +70,15 @@ body {
   height: 45px;
   width: 45px;
   position: absolute; 
+}
+
+#smallCoin {
+  animation: flicker 2s ease alternate infinite;
+  background: purple;
+  border-radius: 50%;
+  box-shadow: 0.375em 0.375em 0 0 rgba(15, 28, 63, 0.125);
+  height: 25px;
+  width: 25px;
+  position: absolute;
 }
 
