@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Project 0</title>
+    <link href="https://fonts.googleapis.com/css?family=Sniglet&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="animate.css" rel="stylesheet" type="text/css" />
     <link href="styles.css" rel="stylesheet" type="text/css" />
@@ -12,15 +13,33 @@
     <script defer src="app.js"></script>
   </head>
   <body>
-
-  	
+  	<div id="gameBoard" class="jumbotron justify-content-center .container-lg">
   	<div id="game">
-  		<div id="gameBoard">
   			<div id="playerOne"></div>
   			<div id="playerTwo"></div>
   			<div id="coin"></div>
-  		</div>
-  	</div>
- 
+        <!-- <div id="smallCoin"></div> -->
+ 	</div>
+	 </div>	
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card w-50 aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"">
+      <div class="card-body">
+        <h2 class="card-title" id="oneScore">Player 1 Score: </h2>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card w-50 aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"">
+      <div class="card-body">
+        <h2 class="card-title" id="twoScore">Player 2 Score: </h2>
+      </div>
+    </div>
+  </div>
+</div>
+<!--  	<div class="scoreBoard">
+ 		<div>Player 1 Score: </div>
+ 		<div>Plater 2 Score: </div>
+ 	</div> -->
   </body>
 </html>
