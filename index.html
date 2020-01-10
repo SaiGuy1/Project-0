@@ -5,14 +5,49 @@
     <meta name="viewport" content="width=device-width">
     <title>Project 0</title>
     <link href="https://fonts.googleapis.com/css?family=Sniglet&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kalam&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="animate.css" rel="stylesheet" type="text/css" />
     <link href="styles.css" rel="stylesheet" type="text/css" />
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script defer src="app.js"></script>
   </head>
   <body>
+
+  <div class="pos-f-t">
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <h1 class="title">The Not So Platformish Platformer <br> (aka the Mario Harry Potter Pong Game) <h1>
+  </nav>
+</div>
+
+<div class="alert alert-light" role="alert">
+  <div class="row">
+  <div class="col-sm-6">
+    <div class="card w-50 aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"" id="oneCard">
+      <div class="card-body">
+        <h2 class="card-title" id="oneScore">Player 1 Score: </h2>
+        <div class="progress">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" id="OneProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card w-50 aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"" id="twoCard">
+      <div class="card-body">
+        <h2 class="card-title" id="twoScore">Player 2 Score: </h2>
+        <div class="progress">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" id="TwoProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
   	<div id="gameBoard" class="jumbotron justify-content-center .container-lg">
   	<div id="game">
   			<div id="playerOne"></div>
@@ -21,22 +56,44 @@
         <!-- <div id="smallCoin"></div> -->
  	</div>
 	 </div>	
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card w-50 aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"">
-      <div class="card-body">
-        <h2 class="card-title" id="oneScore">Player 1 Score: </h2>
-      </div>
-    </div>
+
+<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-header">
+    <img src="..." class="rounded mr-2" alt="...">
+    <strong class="mr-auto">Bootstrap</strong>
+    <small>11 mins ago</small>
+    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+      <span id="message" aria-hidden="true">&times;</span>
+    </button>
   </div>
-  <div class="col-sm-6">
-    <div class="card w-50 aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"">
-      <div class="card-body">
-        <h2 class="card-title" id="twoScore">Player 2 Score: </h2>
-      </div>
-    </div>
+  <div class="toast-body">
+    Hello, world! This is a toast message.
   </div>
 </div>
+
+<!-- <div class="row">
+  <div class="col-sm-6">
+    <div class="card w-50 aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"" id="oneCard">
+      <div class="card-body">
+        <h2 class="card-title" id="oneScore">Player 1 Score: </h2>
+        <div class="progress">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" id="OneProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card w-50 aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"" id="twoCard">
+      <div class="card-body">
+        <h2 class="card-title" id="twoScore">Player 2 Score: </h2>
+        <div class="progress">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" id="TwoProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+</div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
 <!--  	<div class="scoreBoard">
  		<div>Player 1 Score: </div>
  		<div>Plater 2 Score: </div>
